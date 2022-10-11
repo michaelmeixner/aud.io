@@ -21,10 +21,11 @@ public class WavePlotter extends JFrame {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
+        // TODO: output function waveform as an audio tone
     }
 
     class DrawFunc extends JPanel {
-
+        // TODO: modify so that the frequency is adjustable
         double sin(double x) {
             return Math.sin(x);
         }
