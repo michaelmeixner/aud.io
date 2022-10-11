@@ -1,17 +1,23 @@
-
+import java.time.*;
 public class AudioTest {
     private static int[] data;
-    public static int[] calculateData(int range){
+    private static int[] time;
+
+    public static void makeWave(int range){
         data = new int[range];
-        for(int i = 0; i < range ; i++){
-            data[i] = (int) Math.sin((double)i); //this is an example, use your mathematical function here
+        time = new int[range];
+        for(int i = 0; i < range ; i++) {
+            for(int j = 0; j < time.length; j++) {
+                data[i] = (int) Math.sin((double)i);
+                time[j] = j;
+            }
         }
-        return data;
     }
     
     public static void main(String[] args) {
-        int range = 100; //adjust as you wish
+        int range = 100;
         FuncAnimation plot = new FuncAnimation();
-        plot.coord = calculateData(range);
+        makeWave(range);
+        plot.display();
     }
 }
